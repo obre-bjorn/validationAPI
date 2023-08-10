@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Validation</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div id="app">
+        <div class="form-container">
+            <div class="image-form">
+                <h1>Welcome</h1>
+                <p></p>
+            </div>
+            <form id="form1">
+                <p>If you a Have an account <a href="#">Log in</a> to continue</p>
+                <h1>Register Here</h1>
+                <div class="formGroup">
+                    <label for="fullname">Full Name</label>
+                    <div class="input">
+                        <input id="fullname" type="text" name="firstname" required />
+                        <span class="successIcon">good</span>
+                        <span class="errorIcon"></span>
+                    </div>
+                    <p class="errorMessage"></p>
+                </div>
+                <div class="formGroup">
+                    <label for="email">Email</label>
+                    <div class="input">
+                        <input id="email" type="email" name="email" required/>
+                        <span class="successIcon">good</span>
+                        <span class="errorIcon"></span>
+                    </div>
+                    <p class="errorMessage"></p>
+                </div>
+                <div class="formGroup">
+                    <label for="country">Country</label>
+                    <div class="input">
+                        <select id="country" name="country" required/>
+                        <option value="KE">Kenya</option>
+                        <option value="TZ">Tanzania</option>
+                        <option value="UG">Uganda</option>
+                        <option value="SD">Sudan</option>
+                        </select>
+                        <span class="successIcon">good</span>
+                        <span class="errorIcon"></span>
+                    </div>
+                    <p class="errorMessage"></p>
+                </div>
+                <div class="formGroup">
+                    <label for="phone-number">Phone Number</label>
+                    <div class="input">
+                        <input id="phone-number" type="text" name="phone-number" required/>
+                        <span class="successIcon">good</span>
+                        <span class="errorIcon"></span>
+                    </div>
+                    <p class="errorMessage"></p>
+                </div>
+                <div class="formGroup">
+                    <label for="password">Password</label>
+                    <div class="input">
+                        <input id="password" type="text" name="password" required/>
+                        <span class="successIcon">good</span>
+                        <span class="errorIcon"></span>
+                    </div>
+                    <p class="errorMessage"></p>
+                </div>
+                <div class="formGroup">
+                    <label for="confirm-password">Confirm Password</label>
+                    <div class="input">
+                        <input id="confirm-password" type="password" name="password" required/>
+                        <span class="successIcon">good</span>
+                        <span class="errorIcon"></span>
+                    </div>
+                    <p class="errorMessage"></p>
+                </div>
+
+                <input type="submit" value="Register" />
+            </form>
+        </div>
+    </div>
+    <script src="./main.js"></script>
+</body>
+
+</html>

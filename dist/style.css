@@ -1,0 +1,100 @@
+*,
+*::after,
+::before {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#app {
+    padding-left: 80px;
+    padding-right: 80px;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(#e66465, #9198e5);
+    overflow: auto;
+}
+
+#app>.form-container {
+    border-radius: .8rem;
+    margin: 0 auto;
+    margin-top: 32px;
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    max-width: 1000px;
+}
+
+form {
+    flex: 1;
+    padding: 3rem;
+    ;
+}
+
+.image-form {
+    /* margin-top: 20px; */
+    flex: 1;
+    background: url(images/824696.jpg);
+    background-size: 100% 100%;
+    color: white;
+    padding: 30px;
+    border-radius: 0.8rem 0 0 0.8rem;
+}
+
+.formGroup {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.formGroup>.input {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .4rem;
+    margin-top: .4rem;
+    width: 100%;
+}
+
+.formGroup>.errorMessage {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 1.5rem;
+}
+
+.formGroup>.input>input,
+.formGroup>.input>select,
+input {
+    width: 100%;
+    padding: .4rem;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid black;
+}
+
+.formGroup>.input>input:valid {
+    border-color: green;
+}
+
+.formGroup>.input>input:invalid {
+    border-color: red;
+}
+
+input[type="submit"] {
+    color: white;
+    background-color: green;
+    padding: .5rem 2rem;
+    border: none;
+    border-radius: .5rem;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: lightgreen;
+    color: black;
+}
