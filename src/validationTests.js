@@ -1,13 +1,23 @@
 const TESTS = {
     // reportValidy() Triggers Invalid Event
+    // eslint-disable-next-line quotes
+    successIcon: `<i class="fa-solid fa-circle-check" style="color: #23d520;"></i>`,
+    // eslint-disable-next-line quotes
+    wrongIcon: `<i class="fa-solid fa-circle-xmark" style="color: #f20707;"></i>`,
+
+    clearElement(ev) {
+        element.remove
+    },
 
     testName(ev) {
         const fullname = ev.target
 
-        console.log(fullname)
+
     },
+
     testEmail(ev) {
         const email = ev.target
+        const checkIcon = email.nextElementSibling
         const emailReg = /@gmail.com$/i
         email.setCustomValidity('')
 
@@ -15,7 +25,10 @@ const TESTS = {
             email.setCustomValidity('Please enter a gmail email')
             console.log('This is not a gmail address!')
             email.reportValidity()
+            return
         }
+        checkIcon.innerHTML = ''
+        checkIcon.insertAdjacentHTML('beforeend', TESTS.successIcon)
 
     },
     testPassword(ev) {
@@ -42,7 +55,9 @@ const TESTS = {
     },
     fail(ev) {
         const element = ev.target
-        console.log(element.nextElementSibling)
+        const checkIcon = element.nextElementSibling
+        checkIcon.innerHTML = ''
+        checkIcon.insertAdjacentHTML('beforeend', TESTS.wrongIcon)
 
     }
 }
