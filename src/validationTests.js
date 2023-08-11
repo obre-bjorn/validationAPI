@@ -1,5 +1,5 @@
 const TESTS = {
-
+    // reportValidy() Triggers Invalid Event
 
     testName(ev) {
         const fullname = ev.target
@@ -38,6 +38,11 @@ const TESTS = {
             confirmPassword.setCustomValidity('Should be the same as password')
             password.reportValidity()
         }
+
+    },
+    fail(ev) {
+        const element = ev.target
+        console.log(element.nextElementSibling)
 
     }
 }
