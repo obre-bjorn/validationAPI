@@ -8,17 +8,25 @@ const APP = {
             // const country = document.querySelector('#country')
             // const phoneNumber = document.querySelector('#phone-number')
         const password = document.querySelector('#password')
-            // const confirmPassword = document.querySelector('#confirm-password')
-            // const form = document.querySelector('form1')
+        const confirmPassword = document.querySelector('#confirm-password')
+        const form = document.querySelector('form1')
 
+
+        // On Change
         fullname.addEventListener('change', TESTS.testName)
         email.addEventListener('change', TESTS.testEmail)
         password.addEventListener('change', TESTS.testPassword)
+        confirmPassword.addEventListener('change', TESTS.testConfirmPassword)
+
+
+        // Form on Submit
+        form.addEventListener('submit', this.validate)
+
 
     },
 
     validate(element) {
-        console.log(element.target.checkValidity())
+        console.log(element.checkValidity())
     }
 }
 

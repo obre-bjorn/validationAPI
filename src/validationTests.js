@@ -1,4 +1,6 @@
 const TESTS = {
+
+
     testName(ev) {
         const fullname = ev.target
 
@@ -26,7 +28,16 @@ const TESTS = {
             password.setCustomValidity('Password must contain capital\n Both capital and small characters and special characters')
             password.reportValidity()
         }
+    },
+    testConfirmPassword(ev) {
+        const password = document.querySelector('#password')
+        const confirmPassword = ev.target
 
+        confirmPassword.setCustomValidity('')
+        if (confirmPassword.value !== password.value) {
+            confirmPassword.setCustomValidity('Should be the same as password')
+            password.reportValidity()
+        }
 
     }
 }
