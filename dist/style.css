@@ -67,6 +67,16 @@ form {
     margin-bottom: 1.5rem;
 }
 
+.formGroup>.input>input:valid {
+    border-color: green;
+}
+
+
+/* .formGroup>.input>input:invalid {
+    border-color: red; 
+  
+} */
+
 .formGroup>.input>input,
 .formGroup>.input>select,
 input {
@@ -74,15 +84,8 @@ input {
     padding: .4rem;
     outline: none;
     border: none;
-    border-bottom: 2px solid black;
-}
-
-.formGroup>.input>input:valid {
-    border-color: green;
-}
-
-.formGroup>.input>input:invalid {
-    border-color: red;
+    border-bottom: 2px solid;
+    border-color: black;
 }
 
 input[type="submit"] {
