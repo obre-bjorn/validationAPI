@@ -20,7 +20,10 @@ const APP = {
 
 
         // On Invalid
+        fullname.addEventListener('invalid', TESTS.fail)
         email.addEventListener('invalid', TESTS.fail)
+        password.addEventListener('invalid', TESTS.fail)
+        confirmPassword.addEventListener('invalid', TESTS.fail)
 
         // Form on Submit
         form.addEventListener('submit', this.validate)
@@ -32,7 +35,6 @@ const APP = {
         console.log(element.checkValidity())
     }
 }
-
 
 
 APP.init()

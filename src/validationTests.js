@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-return */
 const TESTS = {
     // reportValidy() Triggers Invalid Event
     // eslint-disable-next-line quotes
@@ -5,19 +6,22 @@ const TESTS = {
     // eslint-disable-next-line quotes
     wrongIcon: `<i class="fa-solid fa-circle-xmark" style="color: #f20707;"></i>`,
 
-    clearElement(ev) {
-        element.remove
-    },
+
 
     testName(ev) {
         const fullname = ev.target
 
+        if (fullname.value.length < 3) {
+            fullname.setCustomValidity('Name is too Short!')
+            fullname.reportValidity()
+            return
+        }
+        TESTS.success(ev)
 
     },
 
     testEmail(ev) {
         const email = ev.target
-        const checkIcon = email.nextElementSibling
         const emailReg = /@gmail.com$/i
         email.setCustomValidity('')
 
@@ -27,8 +31,7 @@ const TESTS = {
             email.reportValidity()
             return
         }
-        checkIcon.innerHTML = ''
-        checkIcon.insertAdjacentHTML('beforeend', TESTS.successIcon)
+        TESTS.success(ev)
 
     },
     testPassword(ev) {
@@ -40,7 +43,9 @@ const TESTS = {
         if (passwordReg.test(password.value) === false) {
             password.setCustomValidity('Password must contain capital\n Both capital and small characters and special characters')
             password.reportValidity()
+            return
         }
+        TESTS.success(ev)
     },
     testConfirmPassword(ev) {
         const password = document.querySelector('#password')
@@ -50,7 +55,9 @@ const TESTS = {
         if (confirmPassword.value !== password.value) {
             confirmPassword.setCustomValidity('Should be the same as password')
             password.reportValidity()
+            return
         }
+        TESTS.success(ev)
 
     },
     fail(ev) {
@@ -58,6 +65,13 @@ const TESTS = {
         const checkIcon = element.nextElementSibling
         checkIcon.innerHTML = ''
         checkIcon.insertAdjacentHTML('beforeend', TESTS.wrongIcon)
+
+    },
+    success(ev) {
+        const element = ev.target
+        const checkIcon = element.nextElementSibling
+        checkIcon.innerHTML = ''
+        checkIcon.insertAdjacentHTML('beforeend', TESTS.successIcon)
 
     }
 }
