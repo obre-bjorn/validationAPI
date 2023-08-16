@@ -77,6 +77,11 @@ form {
   
 } */
 
+.formGroup>label {
+    font-weight: bolder;
+    color: #e66465;
+}
+
 .formGroup>.input>input,
 .formGroup>.input>select,
 input {
